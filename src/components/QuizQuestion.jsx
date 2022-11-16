@@ -2,36 +2,15 @@ import React, { useState } from 'react';
 
 import { ANSWER_LETTERS } from '../utils';
 import { AnswerButton } from './AnswerButton';
+import Feedback from './Feedback';
 
 export function QuizQuestion({ quizQuestion }) {
 	const [question, setQuestion] = useState(quizQuestion);
 	return (
 			<>
 					<p>{question.text}</p>
-					<span>
-							{question.answer &&
-									(question.correctAnswer === question.answer ? (
-											<span
-													style={{
-															color: "green",
-															background: "transparent",
-															fontSize: "1.35rem"
-													}}
-											>
-													&#x2713;
-											</span>
-									) : (
-											<span
-													style={{
-															color: "red",
-															background: "transparent",
-															fontSize: "1rem"
-													}}
-											>
-													&#x274C;
-											</span>
-									))}
-					</span>
+					<Feedback isValid={question.answer &&
+					(question.correctAnswer === question.answer)}/>
 					<p>Answers:</p>
 					<AnswerButton
 							answerLetter={ANSWER_LETTERS.A}
