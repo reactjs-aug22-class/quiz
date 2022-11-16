@@ -6,11 +6,12 @@ import Feedback from './Feedback';
 
 export function QuizQuestion({ quizQuestion }) {
 	const [question, setQuestion] = useState(quizQuestion);
+	const isValid = question.answer &&
+	(question.correctAnswer === question.answer)
 	return (
 			<>
 					<p>{question.text}</p>
-					<Feedback isValid={question.answer &&
-					(question.correctAnswer === question.answer)}/>
+					<Feedback isValid={isValid}/>
 					<p>Answers:</p>
 					<AnswerButton
 							answerLetter={ANSWER_LETTERS.A}
