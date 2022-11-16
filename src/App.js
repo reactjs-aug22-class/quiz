@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
 
-function App() {
+import { QuizQuestion } from './components/QuizQuestion';
+import React from "react";
+
+const quizQuestions = [
+  {
+    text: "Q1: lorem ipsum sit seq",
+    correctAnswer: "A",
+    answer: undefined
+  },
+  {
+    text: "Q2: lorem ipsum sit seq",
+    correctAnswer: "B",
+    answer: undefined
+  },
+  {
+    text: "Q3: lorem ipsum sit seq",
+    correctAnswer: "D",
+    answer: undefined
+  }
+];
+export default function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Quiz</h1>
+      {quizQuestions.map((q) => (
+        <QuizQuestion quizQuestion={q} />
+      ))}
     </div>
   );
 }
-
-export default App;
