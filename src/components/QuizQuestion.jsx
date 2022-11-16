@@ -15,7 +15,7 @@ export function QuizQuestion({ quizQuestion }) {
 													style={{
 															color: "green",
 															background: "transparent",
-															fontSize: "1rem"
+															fontSize: "1.35rem"
 													}}
 											>
 													&#x2713;
